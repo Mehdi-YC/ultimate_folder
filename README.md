@@ -1,58 +1,96 @@
-# Svelte library
+# 📂 Ultimate Folder
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+![Ultimate Folder Preview](ultimate1.png)
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+Ultimate Folder is a **browser-based folder explorer** built with **SvelteKit**.  
+It lets you load an entire folder from your local machine and:
+- 🔍 Browse files and folders
+- 📂 View files in a responsive grid
+- 🖼️ Preview different file types directly in the browser
 
-## Creating a project
+No server upload, **everything stays local**. Ideal for fast local browsing and previews.
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```bash
-# create a new project in the current directory
-npx sv create
+## ✨ Features
 
-# create a new project in my-app
-npx sv create my-app
-```
+- 📂 Load and browse local folders (via `webkitdirectory` input)
+- 📁 View files grouped by folder
+- 🖼️ Preview supported file types:
+  - Images (`.png`, `.jpg`, `.gif`, `.webp`)
+  - Videos (`.mp4`, `.webm`, `.ogg`)
+  - Text/Code files (`.txt`, `.md`, `.js`, `.py`, etc.)
+  - Custom file types like `.ydk`, `.gba`, `.iso` with special components
+- 🖱️ Responsive grid view of files
+- 🔒 Files are handled **entirely in the browser** (safe and local)
 
-## Developing
+---
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## 🚀 TODO Roadmap (Next Features)
 
-```bash
-npm run dev
+### 🔎 Search & Filter
+- [ ] Search files by name 🔍
+- [ ] Filter by file type (e.g., show only images / only videos)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### 📊 New File Previews
+- [ ] **CSV preview** (use [PapaParse](https://www.papaparse.com/) or [csv-parser](https://github.com/mafintosh/csv-parser))
+- [ ] **Excel (`.xlsx`) preview** (use [SheetJS](https://sheetjs.com/))
+- [ ] **Word Docs (`.docx`) preview** (use [mammoth.js](https://github.com/mwilliamson/mammoth.js))
+- [ ] **PowerPoint (`.pptx`) preview** (use [PptxGenJS](https://gitbrent.github.io/PptxGenJS/))
+- [ ] **MP3 / Audio preview** (native `<audio>` player)
+- [ ] **PDF preview** (use [PDF.js](https://mozilla.github.io/pdf.js/))
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+### 🖥️ UI/UX Enhancements
+- [ ] Show file size and modified date
+- [ ] Sort files (by name, size, date)
+- [ ] Show breadcrumbs (`Root / Folder / Subfolder`)
+- [ ] Allow collapsing/expanding folder tree
+- [ ] Go back and forth in files and display 1 level only
 
-## Building
+## 🛠️ Tech Stack
 
-To build your library:
+- [SvelteKit](https://kit.svelte.dev/) (frontend framework)
+- Tailwind CSS (responsive styling)
+- File APIs (`FileReader`, `webkitdirectory`) for local file handling
+- All file parsing is done **client-side** (privacy safe)
 
-```bash
-npm run package
-```
+---
 
-To create a production version of your showcase app:
+## 🖼️ Supported File Types (Current)
 
-```bash
-npm run build
-```
+| Type        | Extensions                               |
+|-------------|-------------------------------------------|
+| 📄 Code/Text| `.txt`, `.md`, `.js`, `.py`, `.json`, etc. |
+| 🖼️ Image    | `.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`   |
+| 🎥 Video    | `.mp4`, `.webm`, `.ogg`                   |
+| 🎮 Custom   | `.ydk`, `.gba`, `.iso`                    |
 
-You can preview the production build with `npm run preview`.
+---
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## 📂 How It Works
+- Uses `input type="file" webkitdirectory` to select entire folders
+- Uses **relative paths** (`webkitRelativePath`) to reconstruct folders and files
+- Files are displayed in a grid and can be previewed directly
+- Uses **FileReader** to read file content for previews (text, images, video)
 
-## Publishing
+---
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+## 💡 Name Idea Alternatives
+- Ultimate Folder (✅ current)
+- Ultimate Folder Explorer
+- Ultimate Files
+- Local Folder Viewer
+- FileGrid
 
-To publish your library to [npm](https://www.npmjs.com):
+---
 
-```bash
-npm publish
-```
+## 📸 Screenshot
+
+![Ultimate Folder Preview](ultimate1.png)
+
+---
+
+## 📝 License
+
+MIT License.  
+This project is open for contributions — feel free to fork and add new file previews!
