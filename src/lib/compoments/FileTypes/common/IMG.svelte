@@ -4,7 +4,7 @@
     let metadata = {};
   
     $: if (file) {
-      imageUrl = URL.createObjectURL(file);
+      imageUrl = URL.createObjectURL(file.file);
       metadata = {
         name: file.name,
         size: (file.size / 1024).toFixed(2) + " KB",

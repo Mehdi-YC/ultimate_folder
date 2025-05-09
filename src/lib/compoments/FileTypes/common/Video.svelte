@@ -11,7 +11,7 @@
     }
   
     $: if (file) {
-      videoUrl = URL.createObjectURL(file);
+      videoUrl = URL.createObjectURL(file.file);
       metadata = {
         name: file.name,
         size: (file.size / 1024).toFixed(2) + " KB",

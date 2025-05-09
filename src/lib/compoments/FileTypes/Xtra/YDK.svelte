@@ -29,11 +29,12 @@
   
     // Reactively read and parse the file
     $: if (file) {
+      console.log(file)
       let reader = new FileReader();
       reader.onload = (e) => {
         parseYDK(e.target.result);
       };
-      reader.readAsText(file);
+      reader.readAsText(file.file);
     }
   </script>
   

@@ -60,7 +60,7 @@
           }
         });
       };
-      reader.readAsText(file);
+      reader.readAsText(file.file);
     }
   </script>
   
