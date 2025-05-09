@@ -1,3 +1,22 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+    import File from '$lib/compoments/File.svelte';
+</script>
+
+<div class="grid h-screen grid-rows-[auto_1fr_auto]">
+
+    <header class="bg-red-500 p-4">(header)</header>
+
+      <div class="grid grid-cols-1 md:grid-cols-[auto_1fr_auto]">
+
+          <aside class="bg-yellow-500 p-4">(sidebar)</aside>
+
+          <main class="p-4 space-y-4">
+            <File/>
+          </main>
+
+          <aside class="bg-yellow-500 p-4">(sidebar)</aside>
+      </div>
+
+    <footer class="bg-blue-500 p-4">(footer)</footer>
+  </div>
+  
